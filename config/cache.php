@@ -16,7 +16,7 @@ return [
     */
 
     'default' => env('CACHE_DRIVER', 'file'),
-
+    'url' => env('APP_URL', 'http://localhost'),
     /*
     |--------------------------------------------------------------------------
     | Cache Stores
