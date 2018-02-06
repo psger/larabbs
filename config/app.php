@@ -167,7 +167,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+         Mews\Captcha\CaptchaServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -191,7 +191,7 @@ return [
     */
 
     'aliases' => [
-
+        'Captcha' => Mews\Captcha\Facades\Captcha::class,
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
