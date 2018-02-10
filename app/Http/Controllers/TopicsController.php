@@ -37,7 +37,6 @@ class TopicsController extends Controller
 	{
         $topic->fill($request->all());
 		$topic->user_id = Auth::id();
-        dd($topic);
         $topic->save();
 
 		return redirect()->route('topics.show', $topic->id)->with('message', 'Created successfully.');
@@ -46,7 +45,8 @@ class TopicsController extends Controller
 	public function edit(Topic $topic)
 	{
         $this->authorize('update', $topic);
-		return view('topics.create_and_edit', compact('topic'));
+        $categories = Category::all();
+		return view('topics.create_and_edit', compact('topic','categories'));
 	}
 
 	public function update(TopicRequest $request, Topic $topic)
